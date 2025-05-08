@@ -1,3 +1,4 @@
+
 class CartItemModel {
   final String productId;
   final String variant;
