@@ -9,6 +9,7 @@ class CatalogScreen extends ConsumerStatefulWidget {
   const CatalogScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CatalogScreenState createState() => _CatalogScreenState();
 }
 
