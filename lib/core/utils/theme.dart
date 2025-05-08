@@ -169,7 +169,6 @@ class TextThemes {
       );
 }
 
-/// Class containing the supported color schemes.
 class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light();
 }
