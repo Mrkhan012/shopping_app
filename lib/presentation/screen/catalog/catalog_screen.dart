@@ -14,7 +14,7 @@ class CatalogScreen extends ConsumerStatefulWidget {
 }
 
 class _CatalogScreenState extends ConsumerState<CatalogScreen> {
-  bool isLoading = true; 
+  bool isLoading = true; // Loading state flag
   late TextEditingController searchController;
 
   @override
