@@ -59,7 +59,6 @@ class CartNotifier extends StateNotifier<List<CartItemModel>> {
               state[i]
         ];
       } else {
-        // If the quantity becomes zero or less, remove the item from the cart
         removeFromCart(productId, variant);
       }
     }
