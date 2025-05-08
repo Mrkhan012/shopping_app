@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import '../models/product_model.dart';
 
+
 class ReviewRepository {
   final Box<List> _box = Hive.box<List>('reviewsBox');
 
