@@ -3,7 +3,6 @@ import 'package:ecommerce/data/repositories/review_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final reviewRepositoryProvider = Provider((ref) => ReviewRepository());
-
 final productReviewsProvider = StateNotifierProvider.family<ReviewNotifier, List<CustomerReview>, String>(
   (ref, productId) => ReviewNotifier(ref.watch(reviewRepositoryProvider), productId),
 );
