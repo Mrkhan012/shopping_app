@@ -40,7 +40,6 @@ void dispose() {
   Widget build(BuildContext context) {
     final products = ref.watch(productListProvider);
     final product = products.firstWhere((p) => p.id == widget.productId);
-final reviews = ref.watch(productReviewsProvider(product.id));
 
     return Scaffold(
       backgroundColor: kAppBackgroundColor,
