@@ -34,7 +34,7 @@ class ProductTile extends StatelessWidget {
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.network(
                       product.imageUrl,
-                      height: screenHeight *0.14 ,
+                      height: screenHeight *0.1 ,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
