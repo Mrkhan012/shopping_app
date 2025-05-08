@@ -11,7 +11,6 @@ class ProductRepository {
       }
       return sampleProducts;
     } catch (e) {
-      print('Error fetching products: $e');
       throw CustomException('Failed to load products');
     }
   }
