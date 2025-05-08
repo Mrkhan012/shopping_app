@@ -57,8 +57,7 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
               children: [
                 Expanded(
                   child: TextField(
-                      style: const TextStyle(color: kAppBrightWhiteColor), 
-
+                    style: const TextStyle(color: kAppBrightWhiteColor),
                     controller: searchController,
                     decoration: InputDecoration(
                       hintText: 'Search products...',
@@ -105,12 +104,7 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
                       ProductTile(product: filteredProducts[index]),
                 ),
     );
-  }
-
- void _showFilterSheet(BuildContext context, WidgetRef ref) {
-  final selectedCategory = ref.watch(selectedCategoryProvider);
-  final range = ref.watch(priceRangeProvider);
-
+  }void _showFilterSheet(BuildContext context, WidgetRef ref) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -118,25 +112,27 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
       borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
     ),
     builder: (context) {
-      return StatefulBuilder(
-        builder: (context, setModalState) {
-          return Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-            child: Column(
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+        child: Consumer(
+          builder: (context, ref, _) {
+            final selectedCategory = ref.watch(selectedCategoryProvider);
+            final range = ref.watch(priceRangeProvider);
+
+            return Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text("Filter by Category", style: AppTextStyles.title),
                 const SizedBox(height: 10),
                 Wrap(
                   spacing: 8,
-                  children: [ 'Clothing', 'Electronics', 'Accessories']
+                  children: ['Clothing', 'Electronics', 'Accessories']
                       .map((cat) {
                     return ChoiceChip(
                       label: Text(cat),
                       selected: selectedCategory == cat,
                       onSelected: (_) {
                         ref.read(selectedCategoryProvider.notifier).state = cat;
-                        setModalState(() {}); // Refresh bottom sheet UI
                       },
                     );
                   }).toList(),
@@ -154,7 +150,6 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
                   ),
                   onChanged: (val) {
                     ref.read(priceRangeProvider.notifier).state = val;
-                    setModalState(() {}); // Refresh bottom sheet UI immediately
                   },
                 ),
                 const SizedBox(height: 10),
@@ -182,11 +177,12 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
                   ],
                 )
               ],
-            ),
-          );
-        },
+            );
+          },
+        ),
       );
     },
   );
 }
+
 }
