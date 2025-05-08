@@ -2,7 +2,6 @@ import 'package:ecommerce/data/repositories/product_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../data/models/product_model.dart';
-
 // Filter State
 final searchQueryProvider = StateProvider<String>((ref) => '');
 final selectedCategoryProvider = StateProvider<String?>((ref) => null);
