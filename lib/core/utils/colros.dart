@@ -17,7 +17,6 @@ Color lightBluee = const Color(0xFFCCF3FF);
 const Color backgroundColor = Color(0xFFF4F4F6);
 const Color lightblue = Color(0xFFCCF3FF);
 
-// colors for Home screen Hospital_Scroll_card_page
 
 const kBlack = Colors.black12;
 const kBlack_1 = Colors.black87;
