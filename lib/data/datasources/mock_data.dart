@@ -451,5 +451,4 @@ final sampleProducts = [
     ],
     category: 'Grooming',
   ),
-  // Continue adding the category field for the remaining products similarly...
 ];
